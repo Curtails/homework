@@ -1,3 +1,3 @@
 ## Homework
 
-These are homework archives
+These are homework archives.
