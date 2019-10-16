@@ -1,3 +1,20 @@
+/*
+ * This file is part of the Task manager project.
+ * Copyright (C) 2019 Curtails
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #pragma once
 #include <windows.h>
 #include <iostream>
@@ -10,7 +27,7 @@ using namespace std;
 #define PROCESS_PATH L"C:\\Program Files\\Windows NT\\Accessories\\wordpad.exe"
 #define PROCESS_PATH2 L"C:\\Windows\\System32\\notepad.exe"
 //D:\\Converter.exe
-int p_num=0;	//ÔËÐÐ½ø³ÌÊý
+int p_num=0;	//ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½
 unsigned long int temp1[MAX_PATH];
 class process {
 public:
@@ -18,9 +35,9 @@ public:
 	process();
 	void open();
 	void close(unsigned long int id);
-	void seek_name(unsigned long int id);	//´æ´¢½ø³ÌÃûÓëÏß³ÌÊý
-	unsigned long int p_id;				//½ø³Ìid
-	unsigned long int p_threadid;		//Ïß³ÌÊý
+	void seek_name(unsigned long int id);	//ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½
+	unsigned long int p_id;				//ï¿½ï¿½ï¿½ï¿½id
+	unsigned long int p_threadid;		//ï¿½ß³ï¿½ï¿½ï¿½
 	wchar_t p_name[MAX_PATH];
 	wchar_t test[MAX_PATH];
 	
@@ -32,34 +49,34 @@ process::process() {
 
 }
 
-void process::open()	//´´½¨½ø³Ì
+void process::open()	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
 
-	wchar_t proPath[MAX_PATH];	//¶¨Òå´óÐ¡MAX_PATHÊý×é
-	wcscpy_s(proPath, test);	//½«testÊý×éÄÚÈÝ´«¸øproPath´ú±íÂ·¾¶
+	wchar_t proPath[MAX_PATH];	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡MAX_PATHï¿½ï¿½ï¿½ï¿½
+	wcscpy_s(proPath, test);	//ï¿½ï¿½testï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½proPathï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	//cout << proPath[MAX_PATH] << endl;
 
-	STARTUPINFO si = { sizeof(si) };	// STARTUPINFOÖ¸¶¨´°¿ÚÌØÐÔ Ó¦ÓÃ³ÌÐò±ØÐë½«cb³õÊ¼»¯Îªsizeof(STARTUPINFO)
-	PROCESS_INFORMATION pi;	//PROCESS_INFORMATION½á¹¹´æ´¢Ïß³ÌµÄÏà¹ØÐÅÏ¢
+	STARTUPINFO si = { sizeof(si) };	// STARTUPINFOÖ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ó¦ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ë½«cbï¿½ï¿½Ê¼ï¿½ï¿½Îªsizeof(STARTUPINFO)
+	PROCESS_INFORMATION pi;	//PROCESS_INFORMATIONï¿½á¹¹ï¿½æ´¢ï¿½ß³Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 
 	si.dwFlags = STARTF_USESHOWWINDOW;
 	si.wShowWindow = TRUE;
 	BOOL bRet = ::CreateProcess(NULL, proPath, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi);
-	//´´½¨½ø³Ì
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	p_id = pi.dwProcessId;
-	//printf("½ø³Ìid£º %d\n",pi.dwProcessId);
+	//printf("ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½ %d\n",pi.dwProcessId);
 
-	seek_name(p_id); //´æ´¢½ø³ÌÃû¼°Ïß³ÌÊý
+	seek_name(p_id); //ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½
 	return;
 }
 void process::close(unsigned long int id)
 {
-	PROCESSENTRY32 pe;	//´æ·Å¿ìÕÕ½ø³ÌÐÅÏ¢µÄÒ»¸ö½á¹¹Ìå
+	PROCESSENTRY32 pe;	//ï¿½ï¿½Å¿ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ò»ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½
 	pe.dwSize = sizeof(PROCESSENTRY32);
 
-	HANDLE hProcess;	//¶¨ÒåÒ»¸ö¾ä±ú Ö¸ÏòÒª½áÊøµÄ½ø³Ì
-	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);	//Ö¸ÏòÏµÍ³½ø³Ì¿ìÕÕ
+	HANDLE hProcess;	//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ Ö¸ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½
+	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);	//Ö¸ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½
 	if (hSnapshot == INVALID_HANDLE_VALUE)
 	{
 		printf("CreateToolhelp32Snapshot error.\n");
@@ -82,20 +99,20 @@ void process::close(unsigned long int id)
 	}
 	printf("%ls----%d\n", pe.szExeFile, pe.th32ProcessID);
 
-	hProcess = ::OpenProcess(PROCESS_TERMINATE, FALSE, pe.th32ProcessID); //¸ù¾Ý½ø³ÌID·µ»Ø¶ÔÏó¾ä±ú
-	::TerminateProcess(hProcess, 0);  //¸ù¾Ý¶ÔÏó¾ä±ú½áÊø½ø³Ì
-	CloseHandle(hSnapshot);	//¹Ø±Õ¾ä±ú
+	hProcess = ::OpenProcess(PROCESS_TERMINATE, FALSE, pe.th32ProcessID); //ï¿½ï¿½ï¿½Ý½ï¿½ï¿½ï¿½IDï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½
+	::TerminateProcess(hProcess, 0);  //ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	CloseHandle(hSnapshot);	//ï¿½Ø±Õ¾ï¿½ï¿½
 	CloseHandle(hProcess);
 	return;
 }
 
 void process::seek_name(unsigned long int id) {
 
-	PROCESSENTRY32 pe;	//´æ·Å¿ìÕÕ½ø³ÌÐÅÏ¢µÄÒ»¸ö½á¹¹Ìå
+	PROCESSENTRY32 pe;	//ï¿½ï¿½Å¿ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ò»ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½
 	pe.dwSize = sizeof(PROCESSENTRY32);
 
-	HANDLE hProcess;	//¶¨ÒåÒ»¸ö¾ä±ú Ö¸ÏòÒª½áÊøµÄ½ø³Ì
-	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);	//Ö¸ÏòÏµÍ³½ø³Ì¿ìÕÕ
+	HANDLE hProcess;	//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ Ö¸ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½
+	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);	//Ö¸ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½
 	if (hSnapshot == INVALID_HANDLE_VALUE)
 	{
 		printf("CreateToolhelp32Snapshot error.\n");
@@ -117,20 +134,20 @@ void process::seek_name(unsigned long int id) {
 
 	}
 
-	wcscpy_s(p_name, pe.szExeFile);	//´æ´¢½ø³ÌÃû
-	p_threadid = pe.cntThreads;		//´æ´¢Ïß³ÌÊý
+	wcscpy_s(p_name, pe.szExeFile);	//ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	p_threadid = pe.cntThreads;		//ï¿½æ´¢ï¿½ß³ï¿½ï¿½ï¿½
 }
 
 // wchar ×ª std::string
 void process::Wchar_tToString(std::string& szDst, wchar_t* wchar)
 {
 	wchar_t* wText = wchar;
-	DWORD dwNum = WideCharToMultiByte(CP_OEMCP, NULL, wText, -1, NULL, 0, NULL, FALSE);// WideCharToMultiByteµÄÔËÓÃ
-	char* psText; // psTextÎªchar*µÄÁÙÊ±Êý×é£¬×÷Îª¸³Öµ¸østd::stringµÄÖÐ¼ä±äÁ¿
+	DWORD dwNum = WideCharToMultiByte(CP_OEMCP, NULL, wText, -1, NULL, 0, NULL, FALSE);// WideCharToMultiByteï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	char* psText; // psTextÎªchar*ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½é£¬ï¿½ï¿½Îªï¿½ï¿½Öµï¿½ï¿½std::stringï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½
 	psText = new char[dwNum];
-	WideCharToMultiByte(CP_OEMCP, NULL, wText, -1, psText, dwNum, NULL, FALSE);// WideCharToMultiByteµÄÔÙ´ÎÔËÓÃ
-	szDst = psText;// std::string¸³Öµ
-	delete[]psText;// psTextµÄÇå³ý
+	WideCharToMultiByte(CP_OEMCP, NULL, wText, -1, psText, dwNum, NULL, FALSE);// WideCharToMultiByteï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½ï¿½ï¿½
+	szDst = psText;// std::stringï¿½ï¿½Öµ
+	delete[]psText;// psTextï¿½ï¿½ï¿½ï¿½ï¿½
 }
 
 //std::string ×ª wchar
