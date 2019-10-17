@@ -55,26 +55,26 @@ typedef struct _STARTUPINFO
 ## CreateToolhelp32Snapshot
 ```c++
 HANDLE_WINAPI CreateToolHelp32Snapshot(
-                                       DWORD dwFlags,	//指定了获取系统进程快照的类型
-                                       DWORD th32ParentProcessID//指向要获取进程快照的ID，获取系统内所有进程快照时是0
-                                      );
+    DWORD dwFlags,	//指定了获取系统进程快照的类型
+    DWORD th32ParentProcessID//指向要获取进程快照的ID，获取系统内所有进程快照时是0
+);
 ```
 
 ## Process32First与Process32Next
 如果`CreateToolhelp32Snapshot`函数调用成功返回快照句柄 需要调用Process32First函数查找系统进程的第一个进程
 ```c++
 BOOL Process32First(
-                    HANDLE hSnapshot,
-                    LPROCESSENTRY32 lppe
-                   );
+    HANDLE hSnapshot,
+    LPROCESSENTRY32 lppe
+);
  
 ```
 再调用Process32Next函数列出系统中其它进程
 ```c++
 BOOL Process32Next(
-                    HANDLE hSnapshot,
-                    LPROCESSENTRY32 lppe
-                   );
+     HANDLE hSnapshot,
+     LPROCESSENTRY32 lppe
+);
 ```
 一个输出系统进程的demo
 ```c++
