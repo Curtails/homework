@@ -18,9 +18,9 @@
 #include "MyForm.h"
 #include "process.h"
 
-using namespace test;//使锟斤拷MyForm.h锟叫讹拷锟斤拷锟斤拷锟斤拷锟秸硷拷
+using namespace test;
 
-[STAThread]//锟斤拷锟竭筹拷锟斤拷锟皆ｏ拷锟斤拷些锟斤拷锟揭拷锟斤拷叱锟�
+[STAThread]
 
 int main()
 {
