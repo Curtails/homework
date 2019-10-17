@@ -35,7 +35,7 @@ namespace test {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// MyForm ÕªÒª
+	/// MyForm æ‘˜è¦
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -44,13 +44,13 @@ namespace test {
 		{
 			InitializeComponent();
 			//
-			//TODO:  ÔÚ´Ë´¦Ìí¼Ó¹¹Ôìº¯Êı´úÂë
+			//TODO:  åœ¨æ­¤å¤„æ·»åŠ æ„é€ å‡½æ•°ä»£ç 
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// ÇåÀíËùÓĞÕıÔÚÊ¹ÓÃµÄ×ÊÔ´¡£
+		/// æ¸…ç†æ‰€æœ‰æ­£åœ¨ä½¿ç”¨çš„èµ„æºã€‚
 		/// </summary>
 		~MyForm()
 		{
@@ -64,7 +64,7 @@ namespace test {
 
 
 
-	private: System::Windows::Forms::ToolStripMenuItem^ ¹ØÓÚToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ å…³äºToolStripMenuItem;
 	private: System::Windows::Forms::ListView^ listView1;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader1;
 	private: System::Windows::Forms::ColumnHeader^ columnHeader2;
@@ -77,19 +77,19 @@ namespace test {
 	
 	private:
 		/// <summary>
-		/// ±ØĞèµÄÉè¼ÆÆ÷±äÁ¿¡£
+		/// å¿…éœ€çš„è®¾è®¡å™¨å˜é‡ã€‚
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Éè¼ÆÆ÷Ö§³ÖËùĞèµÄ·½·¨ - ²»ÒªĞŞ¸Ä
-		/// Ê¹ÓÃ´úÂë±à¼­Æ÷ĞŞ¸Ä´Ë·½·¨µÄÄÚÈİ¡£
+		/// è®¾è®¡å™¨æ”¯æŒæ‰€éœ€çš„æ–¹æ³• - ä¸è¦ä¿®æ”¹
+		/// ä½¿ç”¨ä»£ç ç¼–è¾‘å™¨ä¿®æ”¹æ­¤æ–¹æ³•çš„å†…å®¹ã€‚
 		/// </summary>
 		void InitializeComponent(void)
 		{
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->¹ØÓÚToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->å…³äºToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
@@ -103,19 +103,19 @@ namespace test {
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->¹ØÓÚToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->å…³äºToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(501, 27);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// ¹ØÓÚToolStripMenuItem
+			// å…³äºToolStripMenuItem
 			// 
-			this->¹ØÓÚToolStripMenuItem->Name = L"¹ØÓÚToolStripMenuItem";
-			this->¹ØÓÚToolStripMenuItem->Size = System::Drawing::Size(91, 23);
-			this->¹ØÓÚToolStripMenuItem->Text = L"×¢ÒâÊÂÏî";
-			this->¹ØÓÚToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::¹ØÓÚToolStripMenuItem_Click);
+			this->å…³äºToolStripMenuItem->Name = L"å…³äºToolStripMenuItem";
+			this->å…³äºToolStripMenuItem->Size = System::Drawing::Size(91, 23);
+			this->å…³äºToolStripMenuItem->Text = L"æ³¨æ„äº‹é¡¹";
+			this->å…³äºToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::å…³äºToolStripMenuItem_Click);
 			// 
 			// listView1
 			// 
@@ -134,7 +134,7 @@ namespace test {
 			// 
 			// columnHeader1
 			// 
-			this->columnHeader1->Text = L"½ø³Ì";
+			this->columnHeader1->Text = L"è¿›ç¨‹";
 			this->columnHeader1->Width = 167;
 			// 
 			// columnHeader2
@@ -144,7 +144,7 @@ namespace test {
 			// 
 			// columnHeader3
 			// 
-			this->columnHeader3->Text = L"Ïß³ÌÊı";
+			this->columnHeader3->Text = L"çº¿ç¨‹æ•°";
 			this->columnHeader3->Width = 206;
 			// 
 			// button1
@@ -153,7 +153,7 @@ namespace test {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 28);
 			this->button1->TabIndex = 2;
-			this->button1->Text = L"½áÊø";
+			this->button1->Text = L"ç»“æŸ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -172,7 +172,7 @@ namespace test {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 25);
 			this->button2->TabIndex = 4;
-			this->button2->Text = L"ÔËĞĞ";
+			this->button2->Text = L"è¿è¡Œ";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
@@ -188,7 +188,7 @@ namespace test {
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
-			this->Text = L"Ò»¸ö¼òµ¥µÄÈÎÎñ¹ÜÀíÆ÷";
+			this->Text = L"ä¸€ä¸ªç®€å•çš„ä»»åŠ¡ç®¡ç†å™¨";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -204,7 +204,7 @@ namespace test {
 
 		}
 
-		   //½áÊø°´Å¥
+		   //ç»“æŸæŒ‰é’®
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		process obj;
 		int Index = 0;
@@ -218,36 +218,36 @@ namespace test {
 		}
 
 	}
-		   //¿ªÊ¼°´Å¥
+		   //å¼€å§‹æŒ‰é’®
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 			string str;
-			ConvertToString(textBox1->Text, str);	//system::string ×ª std::string
+			ConvertToString(textBox1->Text, str);	//system::string è½¬ std::string
 
 			std::wstring widstr = std::wstring(str.begin(), str.end());
-			const wchar_t* pwidstr = widstr.c_str();	//std::string ×ª wchar_t
+			const wchar_t* pwidstr = widstr.c_str();	//std::string è½¬ wchar_t
 
-			process obj;	//ÊµÀı¶ÔÏó
-			wcscpy_s(obj.test, pwidstr);	//¸³ÖµÂ·¾¶
-			obj.open();	//´´½¨½ø³Ì
+			process obj;	//å®ä¾‹å¯¹è±¡
+			wcscpy_s(obj.test, pwidstr);	//èµ‹å€¼è·¯å¾„
+			obj.open();	//åˆ›å»ºè¿›ç¨‹
 					
 			string str1;
-			obj.Wchar_tToString(str1, obj.p_name);	//½ø³ÌÃû(wchat) ×ªstd::string
+			obj.Wchar_tToString(str1, obj.p_name);	//è¿›ç¨‹å(wchat) è½¬std::string
 
-			String^ net_s1 = gcnew String(str1.c_str());	//std::string ×ªSystem::String
+			String^ net_s1 = gcnew String(str1.c_str());	//std::string è½¬System::String
 
-			listView1->Items->Add(net_s1);		//Ê¹ÓÃAdd·½·¨Ïò¿Ø¼şÖĞÌí¼ÓÊı¾İ
+			listView1->Items->Add(net_s1);		//ä½¿ç”¨Addæ–¹æ³•å‘æ§ä»¶ä¸­æ·»åŠ æ•°æ®
 			listView1->Items[p_num]->SubItems->Add(obj.p_id.ToString());
 			listView1->Items[p_num]->SubItems->Add(obj.p_threadid.ToString());
-			temp1[p_num] = obj.p_id;	//½ø³Ìid´æ´¢
+			temp1[p_num] = obj.p_id;	//è¿›ç¨‹idå­˜å‚¨
 			p_num++;
 		}
 
-		   //textboxÖµ¸Ä±ä
+		   //textboxå€¼æ”¹å˜
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
 		}
-	private: System::Void ¹ØÓÚToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-			MessageBox::Show("ÊäÈëÂ·¾¶(Â·¾¶²»ÄÜº¬ÓĞ¿Õ¸ñ)µã»÷ÔËĞĞ°´Å¥ÔËĞĞ½ø³Ì Ñ¡ÖĞ½ø³Ìµã»÷½áÊø°´Å¥½áÊø½ø³Ì", "×¢ÒâÊÂÏî");
+	private: System::Void å…³äºToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+			MessageBox::Show("è¾“å…¥è·¯å¾„(è·¯å¾„ä¸èƒ½å«æœ‰ç©ºæ ¼)ç‚¹å‡»è¿è¡ŒæŒ‰é’®è¿è¡Œè¿›ç¨‹ é€‰ä¸­è¿›ç¨‹ç‚¹å‡»ç»“æŸæŒ‰é’®ç»“æŸè¿›ç¨‹", "æ³¨æ„äº‹é¡¹");
 			
 	}
 };
