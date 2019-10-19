@@ -27,15 +27,15 @@ int main()
 {
 
 	cout << "run wordpad.exe" << endl;
-	process obj;
-	obj.open();
+	process one;
+	one.open();
 
 	int n;
 	cout << "input 1 to end" << endl;
 	cin >> n;
 	if (n) {
 	
-		obj.close(obj.p_id);
+		one.close(one.p_id);
 	}
 	return 0;
 }
