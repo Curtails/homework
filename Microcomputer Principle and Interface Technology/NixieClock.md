@@ -44,4 +44,11 @@
 
  ![安装到木盒中的效果](https://aeonni.com/images/aeonni-nixie-finish/IMG_6765.JPG) 
 
-  
+
+## 相关网站
+http://www.nixieworld.com/
+https://www.futurlec.com/index.shtml 
+https://www.instructables.com/howto/nixie/ 
+https://github.com/search?q=NixieClock 
+https://www.zhihu.com/question/34564116
+
